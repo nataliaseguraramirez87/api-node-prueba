@@ -1,8 +1,8 @@
 ### get employees
-GET http://localhost:3000/api/employees
+GET http://localhost:3000/api/products
 
 ###
-POST http://localhost:3000/api/employees
+POST http://localhost:3000/api/products
 Content-Type: application/json
 
 {
@@ -10,11 +10,11 @@ Content-Type: application/json
   "salary": 1000
 }
 
-### Get employee by id
-GET http://localhost:3000/api/employees/2
+### Get product by id
+GET http://localhost:3000/api/products/2
 
-### Update an employee
-PATCH http://localhost:3000/api/employees/2
+### Update an product
+PATCH http://localhost:3000/api/products/2
 Content-Type: application/json
 
 {

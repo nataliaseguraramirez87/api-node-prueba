@@ -3,22 +3,30 @@ USE company;
 DELIMITER $$
 USE `company`$$
 
-CREATE PROCEDURE `employeeAddOrEdit` (
+CREATE PROCEDURE `productAddOrEdit` (
   IN _id INT,
   IN _name VARCHAR(45),
-  IN _salary INT
+  IN description VARCHAR(45),
+  IN _valor INT,
+  IN _imageURL varchar(255),
+  IN _createdAt datetime
+  IN _updatedAt datetime  
 )
 BEGIN 
   IF _id = 0 THEN
-    INSERT INTO employee (name, salary)
-    VALUES (_name, _salary);
+    INSERT INTO product (name, valor)
+    VALUES (_name, _valor);
 
     SET _id = LAST_INSERT_ID();
   ELSE
-    UPDATE employee
+    UPDATE product
     SET
     name = _name,
-    salary = _salary
+    description = _description,
+    valor = _valor,
+    imageURL = _imageURL,
+    createdAt = _createdAt,
+    updatedAt = _updatedAt
     WHERE id = _id;
   END IF;
 

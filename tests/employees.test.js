@@ -2,9 +2,9 @@ import request from "supertest";
 import app from "../src/app";
 import { pool } from "../src/db";
 
-describe("Employees Routes", () => {
-  it("should respond a list of employees", async () => {
-    const res = await request(app).get("/api/employees");
+describe("products Routes", () => {
+  it("should respond a list of products", async () => {
+    const res = await request(app).get("/api/products");
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual(
       expect.arrayContaining([
@@ -17,8 +17,8 @@ describe("Employees Routes", () => {
     );
   });
 
-  it("should create a new employee", async () => {
-    const res = await request(app).post("/api/employees").send({
+  it("should create a new product", async () => {
+    const res = await request(app).post("/api/products").send({
       name: "John Doe",
       salary: 1000,
     });
@@ -32,8 +32,8 @@ describe("Employees Routes", () => {
     );
   });
 
-  it("should get an employee by id", async () => {
-    const res = await request(app).get("/api/employees/1");
+  it("should get an product by id", async () => {
+    const res = await request(app).get("/api/products/1");
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual(
       expect.objectContaining({
@@ -44,8 +44,8 @@ describe("Employees Routes", () => {
     );
   });
 
-  it("should delete an employee by id", async () => {
-    const res = await request(app).delete("/api/employees/1");
+  it("should delete an product by id", async () => {
+    const res = await request(app).delete("/api/products/1");
     expect(res.statusCode).toEqual(204);
   });
 
