@@ -12,7 +12,7 @@ CREATE TABLE employee (
 DESCRIBE employee;
 
 INSERT INTO employee values 
-  (1, 'Ryan Ray', 20000),
+  (1, 'Ryan Rjy', 20000),
   (2, 'Joe McMillan', 40000),
   (3, 'John Carter', 50000);
 
