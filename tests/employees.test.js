@@ -22,7 +22,9 @@ describe("products Routes", () => {
   it("should create a new product", async () => {
     const res = await request(app).post("/api/products").send({
       name: "John Doe",
-      salary: 1000,
+      description: "Descripción de los productos",
+      valor: 1000 ,
+      imageURL: "https://conceptoabc.com/wp-content/uploads/2021/09/Producto.jpg",
     });
     expect(res.statusCode).toEqual(201);
     expect(res.body).toEqual(
