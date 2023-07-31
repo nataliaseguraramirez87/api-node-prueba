@@ -57,11 +57,11 @@ export const createProduct = async (req, res) => {
 export const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, salary } = req.body;
+    const { name, description, valor, imageURL } = req.body;
 
     const [result] = await pool.query(
       "UPDATE product SET name = IFNULL(?, name), description = IFNULL(?, description), valor = IFNULL(?, valor), imageURL = IFNULL(?, imageURL) WHERE id = ?",
-      [name, salary, id]
+      [name, description, valor, imageURL,id]
     );
 
     if (result.affectedRows === 0)
