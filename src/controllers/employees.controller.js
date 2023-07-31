@@ -43,10 +43,10 @@ export const deleteProduct = async (req, res) => {
 
 export const createProduct = async (req, res) => {
   try {
-    const { name, salary } = req.body;
+    const { name, description, valor, imageURL} = req.body;
     const [rows] = await pool.query(
       "INSERT INTO product (name, description, valor, imageURL) VALUES (?, ?)",
-      [name, salary]
+      [name, description, valor, imageURL ]
     );
     res.status(201).json({ id: rows.insertId, name, salary });
   } catch (error) {
