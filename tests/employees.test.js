@@ -11,7 +11,9 @@ describe("products Routes", () => {
         expect.objectContaining({
           id: expect.any(Number),
           name: expect.any(String),
-          salary: expect.any(Number),
+          description: expect.any(String),
+          valor:expect.any(Number),
+          imageURL: expect.any(String),
         }),
       ])
     );
@@ -27,7 +29,9 @@ describe("products Routes", () => {
       expect.objectContaining({
         id: expect.any(Number),
         name: "John Doe",
-        salary: 1000,
+        description: "Descripción de los productos",
+        valor: 1000 ,
+        imageURL: "https://conceptoabc.com/wp-content/uploads/2021/09/Producto.jpg",
       })
     );
   });
@@ -39,7 +43,9 @@ describe("products Routes", () => {
       expect.objectContaining({
         id: 1,
         name: expect.any(String),
-        salary: expect.any(Number),
+        description: expect.any(String),
+        valor:expect.any(Number),
+        imageURL: expect.any(String),
       })
     );
   });
