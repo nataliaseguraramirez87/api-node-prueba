@@ -9,8 +9,6 @@ CREATE PROCEDURE `productAddOrEdit` (
   IN description VARCHAR(45),
   IN _valor INT,
   IN _imageURL varchar(255),
-  IN _createdAt datetime
-  IN _updatedAt datetime  
 )
 BEGIN 
   IF _id = 0 THEN
@@ -25,8 +23,6 @@ BEGIN
     description = _description,
     valor = _valor,
     imageURL = _imageURL,
-    createdAt = _createdAt,
-    updatedAt = _updatedAt
     WHERE id = _id;
   END IF;
 
