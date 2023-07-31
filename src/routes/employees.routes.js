@@ -10,7 +10,7 @@ import {
 const router = Router();
 
 // GET all Employees
-router.get("/product", getproduct);
+router.get("/product", getProduct);
 
 // GET An Employee
 router.get("/product/:id", getProduct);
